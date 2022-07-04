@@ -1,0 +1,33 @@
+{
+  "name": "storybook",
+  "version": "0.2.2",
+  "description": "Storybook build for components package",
+  "private": true,
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build-storybook": "build-storybook --output-dir dist"
+  },
+  "dependencies": {
+    "@sucrase/webpack-loader": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "sucrase": "^3.21.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.4.21",
+    "@storybook/addon-actions": "^6.4.21",
+    "@storybook/addon-controls": "^6.4.22",
+    "@storybook/addon-links": "^6.4.21",
+    "@storybook/addon-storysource": "^6.4.21",
+    "@storybook/addons": "^6.4.21",
+    "@storybook/react": "^6.4.21",
+    "storybook-dark-mode": "^1.0.9"
+  },
+  "peerDependencies": {
+    "@backstage/core-app-api": "link:../packages/core-app-api",
+    "@backstage/core-plugin-api": "link:../packages/core-plugin-api",
+    "@backstage/test-utils": "link:../packages/test-utils",
+    "@backstage/theme": "link:../packages/theme"
+  }
+}
