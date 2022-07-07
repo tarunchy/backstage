@@ -136,7 +136,19 @@ kubernetes:
     type: 'multiTenant'
   clusterLocatorMethods:
     - type: 'config'
-      clusters: []
+      clusters:
+        - url: http://127.0.0.1:9999
+          name: minikube
+          authProvider: 'serviceAccount'
+          skipTLSVerify: false
+          skipMetricsLookup: true
+          serviceAccountToken: ${K8S_MINIKUBE_TOKEN}
+          dashboardUrl: http://127.0.0.1:64713 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
+          dashboardApp: standard
+          caData: ${K8S_CONFIG_CA_DATA}
+        - url: http://127.0.0.2:9999
+          name: aws-cluster-1
+          authProvider: 'aws'
 
 kafka:
   clientId: backstage
